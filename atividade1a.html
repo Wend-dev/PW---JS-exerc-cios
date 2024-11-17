@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1a - Cálculo de Média</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container2">
+        <div class="header2">
+            <h1>ATIVIDADE 1 - A</h1>
+            <p>Cálculo de Média com Prompt()</p>
+        </div>
+        <div class="content">
+            <p>Abra o console do navegador e siga as instruções para calcular a média.</p>
+            <button onclick="calcularMedia()">Calcular Média</button>
+        </div>
+        <div class="content">
+            <a href="index.html">Voltar à Página Inicial</a>
+        </div>
+    </div>
+
+    <script>
+        function calcularMedia() {
+            const nota1 = parseFloat(prompt("Digite a Nota 1:"));
+            const nota2 = parseFloat(prompt("Digite a Nota 2:"));
+            const media = (nota1 + nota2) / 2;
+            const situacao = media >= 6 ? "Aprovado" : "Reprovado";
+            const cor = media >= 6 ? "azul" : "vermelho";
+            alert(`Média: ${media.toFixed(2)} - Situação: ${situacao}`);
+            console.log(`%cMédia: ${media.toFixed(2)} - Situação: ${situacao}`, `color: ${cor}; font-weight: bold;`);
+        }
+    </script>
+    
+</body>
+</html>

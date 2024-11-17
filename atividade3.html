@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - Manipulação de Listas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container2">
+        <div class="header2">
+            <h1>ATIVIDADE 3</h1>
+            <p>Manipulação de Lista com appendChild</p>
+        </div>
+        <div class="content">
+            <label for="item">Novo item:</label>
+            <input type="text" id="item">
+            <br>
+            <label>Cor:</label>
+            <input type="radio" name="cor" value="red" checked> Vermelho
+            <input type="radio" name="cor" value="blue"> Azul
+            <input type="radio" name="cor" value="green"> Verde
+            <br><br>
+            <button onclick="adicionarItem()">Adicionar à lista</button>
+            <button onclick="limparLista()">Limpar lista</button>
+            <ul id="lista"></ul>
+        </div>
+        <div class="content">
+            <a href="index.html">Voltar à Página Inicial</a>
+        </div>
+    </div>
+
+    <script>
+        function adicionarItem() {
+            const lista = document.getElementById("lista");
+            const novoItem = document.createElement("li");
+            const texto = document.getElementById("item").value;
+            const cor = document.querySelector('input[name="cor"]:checked').value;
+
+            if (texto.trim() === "") {
+                alert("Por favor, insira um texto para o item.");
+                return;
+            }
+
+            novoItem.textContent = texto;
+            novoItem.style.color = cor;
+
+            lista.appendChild(novoItem);
+            document.getElementById("item").value = ""; 
+        }
+
+        function limparLista() {
+            const lista = document.getElementById("lista");
+            lista.innerHTML = ""; 
+        }
+    </script>
+</body>
+</html>
